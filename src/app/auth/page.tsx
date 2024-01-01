@@ -1,8 +1,38 @@
+"use client";
+
 import {AiFillGithub} from 'react-icons/ai'
 import {FcGoogle} from 'react-icons/fc'
+import {useState} from 'react'
+
+const defaultFormData = {
+    email: '',
+    name: '',
+    password: ''
+}
+
+
 
 const Auth = () => {
+    const [formData, setFormData] = useState(defaultFormData)
+
     const inputStyles = "border border-gray-300 sm:text-sm text-black rounded-lg block w-full p-2.5 focus:outline-none"
+
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = event.target
+        setFormData({ ...formData, [name]: value})
+    }
+
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        try {
+            console.log(formData)
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setFormData(defaultFormData)
+        }
+    }
     return (
         <section className="container mx-auto">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8 w-80 md:w-[70%] mx-auto">
@@ -15,13 +45,15 @@ const Auth = () => {
                     </span>
                 </div>
 
-                <form className='space-y-4 md:space-y-6'>
+                <form className='space-y-4 md:space-y-6' onSubmit={handleSubmit}>
                     <input 
                         type="text" 
                         name="name" 
                         id="name" 
                         placeholder="John Doe" 
                         className={inputStyles}
+                        value={formData.name}
+                        onChange={handleInputChange}
                         required
                     />
                     <input 
@@ -30,16 +62,19 @@ const Auth = () => {
                         id="email" 
                         placeholder="name@company.com" 
                         className={inputStyles}
+                        value={formData.email}
+                        onChange={handleInputChange}
                         required
                     />
 
                     <input 
                         type="password" 
                         name="password" 
-                        id="password" 
                         placeholder="password" 
                         className={inputStyles}
                         minLength={6}
+                        value={formData.password}
+                        onChange={handleInputChange}
                         required
                     />
                     <button type='submit' className='w-full bg-tetiary-dark focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center'>
