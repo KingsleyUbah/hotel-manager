@@ -17,16 +17,13 @@ export async function getFeaturedRoom() {
   return result;
 }
 
-/*
+
 export async function getRooms() {
-  const result = await sanityClient.fetch<Room[]>(
-    queries.getRoomsQuery,
-    {},
-    { cache: 'no-cache' }
-  );
+  const result = await sanityClient.fetch<Room[]>(queries.getRoomsQuery);
   return result;
 }
 
+/*
 export async function getRoom(slug: string) {
   const result = await sanityClient.fetch<Room>(
     queries.getRoom,
