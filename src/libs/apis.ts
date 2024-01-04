@@ -1,7 +1,7 @@
 // import { CreateReviewDto, Review } from './../models/review';
-// import axios from 'axios';
+import axios from 'axios';
 
-import { Room } from '@/models/room';
+import {CreateBookingDto, Room } from '@/models/room';
 import sanityClient from './sanity';
 import * as queries from './sanityQueries';
 // import { Booking } from '@/models/booking';
@@ -37,7 +37,7 @@ export async function getRoom(slug: string) {
   return result;
 }
 
-/*
+
 export const createBooking = async ({
   adults,
   checkinDate,
@@ -77,6 +77,7 @@ export const createBooking = async ({
   return data;
 };
 
+/*
 export const updateHotelRoom = async (hotelRoomId: string) => {
   const mutation = {
     mutations: [

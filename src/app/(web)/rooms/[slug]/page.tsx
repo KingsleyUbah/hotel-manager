@@ -6,14 +6,14 @@ import { LiaFireExtinguisherSolid } from 'react-icons/lia';
 import { AiOutlineMedicineBox } from 'react-icons/ai';
 import { GiSmokeBomb } from 'react-icons/gi';
 import { useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 import { getRoom } from '@/libs/apis';
 import LoadingSpinner from '../../loading';
 import HotelPhotoGallery from '@/components/HotelPhotoGallery/HotelPhotoGallery';
 import BookRoomCta from '@/components/BookRoomCta/BookRoomCta';
 import toast from 'react-hot-toast';
-// import { getStripe } from '@/libs/stripe';
+import { getStripe } from '@/libs/stripe';
 // import RoomReview from '@/components/RoomReview/RoomReview';
 
 const RoomDetails = (props: { params: { slug: string } }) => {
@@ -52,20 +52,12 @@ const RoomDetails = (props: { params: { slug: string } }) => {
     if (checkinDate > checkoutDate)
       return toast.error('Please choose a valid checkin period');
 
-    const calcNumDays = () => {
-        if (!checkinDate || !checkoutDate) return;
-        const timeDiff = checkoutDate.getTime() - checkinDate.getTime();
-        const noOfDays = Math.ceil(timeDiff / (24 * 60 * 60 * 1000));
-        return noOfDays;
-    };
-
     const numberOfDays = calcNumDays();
 
     const hotelRoomSlug = room.slug.current;
 
-    // const stripe = await getStripe();
+    const stripe = await getStripe();
 
-    /*
     try {
       const { data: stripeSession } = await axios.post('/api/stripe', {
         checkinDate,
@@ -89,7 +81,13 @@ const RoomDetails = (props: { params: { slug: string } }) => {
       console.log('Error: ', error);
       toast.error('An error occured');
     }
-    */
+  };
+
+  const calcNumDays = () => {
+    if (!checkinDate || !checkoutDate) return;
+    const timeDiff = checkoutDate.getTime() - checkinDate.getTime();
+    const noOfDays = Math.ceil(timeDiff / (24 * 60 * 60 * 1000));
+    return noOfDays;
   };
 
   return (
