@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-import { createBooking /*, updateHotelRoom*/ } from '@/libs/apis';
+import { createBooking, updateHotelRoom} from '@/libs/apis';
 
 const checkout_session_completed = 'checkout.session.completed';
 
@@ -29,7 +29,7 @@ export async function POST(req: Request, res: Response) {
       const session = event.data.object;
       console.log(session)
 
-      /*
+      
       const {
         // @ts-ignore
         metadata: {
@@ -45,6 +45,7 @@ export async function POST(req: Request, res: Response) {
         },
       } = session;
 
+      
       await createBooking({
         adults: Number(adults),
         checkinDate,
@@ -57,9 +58,10 @@ export async function POST(req: Request, res: Response) {
         user,
       });
 
+      
       //   Update hotel Room
-      await updateHotelRoom(hotelRoom);
-      */
+      await updateHotelRoom(hotelRoom)        
+
       return NextResponse.json('Booking successful', {
         status: 200,
         statusText: 'Booking Successful',

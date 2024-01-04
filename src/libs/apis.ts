@@ -77,7 +77,7 @@ export const createBooking = async ({
   return data;
 };
 
-/*
+
 export const updateHotelRoom = async (hotelRoomId: string) => {
   const mutation = {
     mutations: [
@@ -92,6 +92,7 @@ export const updateHotelRoom = async (hotelRoomId: string) => {
     ],
   };
 
+
   const { data } = await axios.post(
     `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-10-21/data/mutate/${process.env.NEXT_PUBLIC_SANITY_DATASET}`,
     mutation,
@@ -101,6 +102,7 @@ export const updateHotelRoom = async (hotelRoomId: string) => {
   return data;
 };
 
+/*
 export async function getUserBookings(userId: string) {
   const result = await sanityClient.fetch<Booking[]>(
     queries.getUserBookingsQuery,
