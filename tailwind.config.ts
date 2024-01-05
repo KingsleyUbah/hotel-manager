@@ -20,6 +20,10 @@ const config: Config = {
       },
       fontFamily: {
         poppins: ['var(--font-poppins)', ...fontFamily.sans]
+      },
+      spacing: {
+        '128': '32rem',
+        '100': '28rem'
       }
     },
   },
