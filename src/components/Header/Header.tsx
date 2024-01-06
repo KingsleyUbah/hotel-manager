@@ -38,19 +38,16 @@ const Header = () => {
                     {
                         session?.user ?    (                     
                         <Link href={`/users/${session?.user.id}`}>
-                            {session.user.image ? (
-                                <div className='bg-tertiary-light px-1 py-1 w-20 flex items-center justify-between rounded-md'>
-                                    <span className='text-sm font-medium'>{session.user.name?.substring(0, 5)}...</span>
-                                    <div className='w-5 h-5 rounded-full overflow-hidden'>
-                                        <Image
+                            {session.user.image ? (                                                                    
+                                <div className='w-10 h-10 rounded-full border-solid border-1 border-tertiary-light overflow-hidden'>
+                                    <Image
                                         src={session.user.image}
                                         alt={session.user.name!}
                                         width={40}
                                         height={40}
                                         className='scale-animation img'
-                                        />
-                                    </div>
-                                </div>
+                                    />
+                                </div>                                
                                 ) : (
                                 <FaUserCircle className='cursor-pointer' />
                             )}

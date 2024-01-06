@@ -6,6 +6,7 @@ import { ChangeEvent, FC } from 'react';
 type Props = {
   roomTypeFilter: string;
   searchQuery: string;
+  title: string;
   setRoomTypeFilter: (value: string) => void;
   setSearchQuery: (value: string) => void;
 };
@@ -13,6 +14,7 @@ type Props = {
 const Search: FC<Props> = ({
   roomTypeFilter,
   searchQuery,
+  title,
   setRoomTypeFilter,
   setSearchQuery,
 }) => {
@@ -32,7 +34,12 @@ const Search: FC<Props> = ({
 
   return (
     <section className='bg-tertiary-light px-4 py-6 rounded-lg'>
-      <div className='container mx-auto flex gap-4 flex-wrap justify-between items-center'>
+      { title? (
+          <h3 className='font-medium text-3xl text-center mb-6'>{title}</h3>
+        ): (
+          <span></span>
+      )}
+      <div className='container mx-auto flex gap-4 flex-wrap justify-between items-center'>        
         <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
           <label className='block text-sm font-medium mb-2 text-black'>
             Room Type
@@ -53,12 +60,12 @@ const Search: FC<Props> = ({
 
         <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
           <label className='block text-sm font-medium mb-2 text-black'>
-            Search
+            Room Name (Keyword)
           </label>
           <input
             type='search'
             id='search'
-            placeholder='Search...'
+            placeholder='E.g, Luxury room'
             className='w-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white'
             value={searchQuery}
             onChange={handleSearchQueryChange}
