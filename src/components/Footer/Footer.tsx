@@ -1,52 +1,70 @@
 import Link from 'next/link'
-import {BsFillSendFill, BsTelephoneOutbound} from 'react-icons/bs'
-import {BiMessageDetail} from 'react-icons/bi'
+import {BsTwitter, BsFacebook, BsWhatsapp, BsLinkedin} from 'react-icons/bs'
 
 const Footer = () => {
     return (
-        <footer className="mt-16">
+        <footer className="mt-16 py-12">
             <div className="container mx-auto px-4">
-                <Link href="/" className='font-black text-tertiary-dark'>
-                    Hotelzz
-                </Link>
-
-                <h4 className="font-semibold text-[40px] py-6">Contact</h4>
-                <div className="flex flex-wrap gap-16 items-center justify-between">
-                    <div className="flex-1">
-                        <p>123 Road</p>
-                        <div className="flex items-center py-4">
-                            <BsFillSendFill />
-                            <p className="ml-2">Code with Kingsley</p>
-                        </div>
-                        <div className="flex items-center">
-                            <BsTelephoneOutbound />
-                            <p className="ml-2">00-0000-000</p>
-                        </div>
-                        <div className="flex items-center pt-4">
-                            <BiMessageDetail />
-                            <p className="ml-2">Code with Kingsley</p>
-                        </div>
+                
+                <div className="flex flex-wrap gap-16 justify-between">
+                    <div className="flex-1">        
+                        <Link href="/" className='mb-4 block font-bold text-tertiary-dark'>
+                            Hotelzz
+                        </Link>                
+                        <p>Get the best hotel rooms you can find. Luxury, Basic, you name it!</p>
+                        <div className="flex flex-row items-start py-4">
+                            <div className='mr-4'>
+                                <BsLinkedin />
+                            </div>
+                            <div className='mr-4'>
+                                <BsFacebook />
+                            </div>
+                            <div className='mr-4'>
+                                <BsTwitter />
+                            </div>
+                            <div className='mr-4'>
+                                <BsWhatsapp />
+                            </div>
+                        </div>  
                     </div>
 
                     <div className="flex-1 md:text-right">
-                        <p className="pb-4">Our Story</p>
-                        <p className="pb-4">Get in touch</p>
-                        <p className="pb-4">Our Privacy Commitment</p>
-                        <p className="pb-4">Terms of Service</p>
-                        <p>Customer Assistance</p>
+                        <ul>
+                            <li className='hover:underline duration-500 transition-all pb-4'>
+                                <Link href="/" className='text-tertiary-dark font-bold'>
+                                    About us
+                                </Link>             
+                            </li>
+                            <li className="hover:underline duration-500 transition-all pb-4">
+                                <Link href="/">Our Mission Statement</Link>
+                            </li>                                
+                            <li className="hover:underline duration-500 transition-all pb-4">
+                                <Link href="/">Our Privacy Commitment</Link>
+                            </li>                                
+                            <li className=" hover:underline duration-500 transition-all pb-4">
+                                <Link href="/">Terms of Service</Link>
+                            </li>                                
+                        </ul>                        
                     </div>
 
                     <div className='flex-1 md:text-right'>
-                        <p className="pb-4">Dining Experience</p>
-                        <p className="pb-4">Wellness</p>
-                        <p className="pb-4">Fitness</p>
-                        <p className="pb-4">Sport</p>
-                        <p>Events</p>          
+                        <ul>
+                            <li className='hover:underline duration-500 transition-all pb-4'>
+                                <Link href="/" className='text-tertiary-dark font-bold'>
+                                    Resources
+                                </Link>             
+                            </li>
+                            <li className="hover:underline duration-500 transition-all pb-4">
+                                <Link href="/">Blog</Link>
+                            </li>                                
+                            <li className="hover:underline duration-500 transition-all pb-4">
+                                <Link href="/">Our Mission</Link>
+                            </li>                                
+                            <li className=" hover:underline duration-500 transition-all pb-4">
+                                <Link href="/">FAQ</Link>
+                            </li>                                
+                        </ul>                           
                     </div>                
-                </div>
-
-                <div className='bg-tertiary-light h-10 md:h-[70px] mt-16 w-full bottom-0 left-0'>
-
                 </div>
             </div>
         </footer>        

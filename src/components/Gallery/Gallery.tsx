@@ -11,17 +11,17 @@ const Gallery = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4
+    slidesToScroll: 4    
   };
 
   return (
     <section className='mb-14'>      
-      <p className='md:font-semibold text-lg md:text-xl text-center mb-3'>
+      <p className='md:font-semibold text-lg md:text-2xl text-center mb-3'>
           Explore Our Rooms
       </p>      
       <div className='mx-auto container h-full relative'>            
         <Slider {...settings}>
-          <div>
+          <div style={{marginRight: '500px'}}>
             <Image
                 alt='gallery'
                 className='img'
