@@ -3,6 +3,7 @@
 import { FC } from 'react';
 import { FaLongArrowAltRight } from "react-icons/fa";
 import CountUpNumber from '../CountUpNumber/CountUpNumber';
+import Link from 'next/link';
 
 type Props = {
   heading1: React.ReactNode;
@@ -32,10 +33,13 @@ const ClientComponent: FC<Props> = props => {
           </div>
         </div>
 
-        <button className='btn-primary flex items-center justify-around'>      
-        <span className='mr-4'>Book Now</span>
+        <Link
+          href={'/rooms'}
+          className='flex items-center justify-around text-white text-xl max-w-40 bg-primary px-4 py-3 rounded-lg'
+        >
+          <span className='mr-2'>Book Now</span>
           <FaLongArrowAltRight />      
-        </button>
+        </Link>
       </div>
 
       {section2}

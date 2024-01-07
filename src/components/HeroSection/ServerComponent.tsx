@@ -44,6 +44,7 @@ export const section2 = (
         </div>
       </div>    
     </div>
+    
     {/* Overlap Image */}
     <div className='absolute md:grid hidden bottom-12 -left-32'>
       <Image

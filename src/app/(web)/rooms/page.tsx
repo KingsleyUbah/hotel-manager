@@ -65,6 +65,7 @@ const Rooms = () => {
         searchQuery={searchQuery}
         setRoomTypeFilter={setRoomTypeFilter}
         setSearchQuery={setSearchQuery}
+        title={'Search Rooms'}
       />
 
       <div className='flex mt-20 justify-between flex-wrap'>
