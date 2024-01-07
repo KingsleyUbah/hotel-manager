@@ -42,74 +42,74 @@ const Gallery = () => {
       </p>      
       <div className='mx-auto container h-full relative'>            
         <Slider {...settings}>
-          <div style={{marginRight: '500px'}}>
+          <div className='w-32 h-56'>
             <Image
                 alt='gallery'
                 className='img'
-                src='/images/hero-1.jpeg'
+                src='/images/hero-1.jpg'
                 width={200}
                 height={200}
             />
           </div>
-          <div>
+          <div className='w-32 h-56'>
           <Image
                 alt='gallery'
                 className='img'
-                src='/images/hero-2.jpeg'
+                src='/images/hero-2.jpg'
                 width={200}
                 height={200}
             />
           </div>
-          <div>
+          <div className='w-32 h-56'>
           <Image
                 alt='gallery'
                 className='img'
-                src='/images/hero-1.jpeg'
+                src='/images/hero-3.jpg'
                 width={200}
                 height={200}
             />
           </div>
-          <div>
+          <div className='w-32 h-56'>
           <Image
                 alt='gallery'
                 className='img'
-                src='/images/hero-2.jpeg'
+                src='/images/hero-4.jpg'
                 width={200}
                 height={200}
             />
           </div>
-          <div>
+          <div className='w-32 h-56'>
           <Image
                 alt='gallery'
                 className='img'
-                src='/images/hero-1.jpeg'
+                src='/images/hero-5.jpg'
                 width={200}
                 height={200}
             />
           </div>
-          <div>
+          <div className='w-32 h-56'>
           <Image
                 alt='gallery'
                 className='img'
-                src='/images/hero-2.jpeg'
+                src='/images/hero-6.jpg'
                 width={200}
                 height={200}
             />
           </div>
-          <div>
+          <div className='w-32 h-56'>
           <Image
                 alt='gallery'
                 className='img'
-                src='/images/hero-1.jpeg'
+                src='/images/hero-7.jpg'
                 width={200}
                 height={200}
             />
           </div>
-          <div>
+          <div className='w-32 h-56'>
           <Image
                 alt='gallery'
                 className='img'
-                src='/images/hero-2.jpeg'
+                src='/images/hero-8.jpg'
                 width={200}
                 height={200}
             />
