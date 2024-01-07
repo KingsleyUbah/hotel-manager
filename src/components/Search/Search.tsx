@@ -35,7 +35,7 @@ const Search: FC<Props> = ({
   return (
     <section className='bg-tertiary-light px-4 py-6 rounded-lg'>
       { title? (
-          <h3 className='font-medium text-3xl text-center mb-6'>{title}</h3>
+          <h3 className='font-medium text-3xl text-center mb-6 text-black dark:text-black'>{title}</h3>
         ): (
           <span></span>
       )}
