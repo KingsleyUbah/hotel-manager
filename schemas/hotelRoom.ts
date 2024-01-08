@@ -132,8 +132,8 @@ const hotelRoom = {
       defineField({
         name: 'reviews',
         title: 'Reviews',
-        type: 'array',
-        of: [{ type: 'review' }],
+        type: 'reference',        
+        to: [{ type: 'review' }],
       }),
     ],
   };

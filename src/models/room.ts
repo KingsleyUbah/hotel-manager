@@ -12,6 +12,14 @@ type CoverImage = {
     amenity: string;
     icon: string;
   };
+
+  type Review = {
+    text: string;
+    user: { name: string };
+    userRating: number;
+    _createdAt: Date;
+    _id: string;
+  };
   
   type Slug = {
     _type: string;
@@ -30,6 +38,7 @@ type CoverImage = {
     name: string;
     numberOfBeds: number;
     offeredAmenities: Amenity[];
+    reviews: Review[];
     price: number;
     slug: Slug;
     specialNote: string;

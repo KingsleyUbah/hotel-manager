@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import { Room } from '@/models/room';
 import Link from 'next/link';
+import Rating from '../Rating/Rating';
 
 type Props = {
   featuredRoom: Room;
@@ -12,12 +13,13 @@ type Props = {
 
 const FeaturedRoom: FC<Props> = props => {
   const { featuredRoom } = props;
+  console.log(featuredRoom)
 
   return (
     <section className='flex md:flex-row flex-col px-4 py-10 items-center gap-12 container mx-auto'>
       <div className='md:grid gap-8 grid-cols-1'>
         <div className='rounded-2xl overflow-hidden h-48 mb-4 md:mb-0'>
-          <img
+          <Image
             src={featuredRoom.coverImage.url}
             alt={featuredRoom.name}
             width={300}
@@ -28,7 +30,7 @@ const FeaturedRoom: FC<Props> = props => {
         <div className='grid grid-cols-2 gap-8 h-48'>
           {featuredRoom.images.splice(1, 2).map(image => (
             <div key={image._key} className='rounded-2xl overflow-hidden'>
-              <img
+              <Image
                 src={image.url}
                 alt={image._key}
                 width={300}
@@ -41,8 +43,14 @@ const FeaturedRoom: FC<Props> = props => {
       </div>
 
       <div className='md:py-10 md:w-1/2 text-left'>
-        <h3 className='font-heading mb-2'>{featuredRoom.name}</h3>
-        <div className='py-2 px-1 mb-8 text-sm text-center max-w-32 rounded-lg bg-tertiary-light text-gray-800'>Featured Room</div>       
+        <h3 className='font-heading mb-2'>{featuredRoom.name}</h3>        
+        <div className='py-2 px-1 mb-4 text-sm text-center max-w-32 rounded-lg bg-tertiary-light text-gray-800'>Featured Room</div>       
+        <div className='font-bold mb-8'>Average Rating: 
+          <span className='flex items-center text-tertiary-light text-lg'>
+            <Rating rating={featuredRoom.reviews.userRating} /> /5
+          </span>                      
+        </div>
+        
 
         <p className='font-normal max-w-md'>{featuredRoom.description}</p>        
         <div className='flex flex-col md:flex-row md:items-end justify-between mt-5'>
