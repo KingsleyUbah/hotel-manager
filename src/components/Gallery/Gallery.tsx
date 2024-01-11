@@ -150,7 +150,7 @@ const Gallery = () => {
             {/* <button className="btn px-2 text-sm py-1 rounded-md bg-secondary self-end dark:text-black">Explore</button> */}
             <Link
               href={'/rooms'}
-              className='text-center bg-tertiary-light inline text-sm self-end px-2 py-1 rounded-lg'
+              className='text-center bg-tertiary-light inline text-sm self-end px-2 py-1 rounded-lg text-black'
             >
             Explore
           </Link>

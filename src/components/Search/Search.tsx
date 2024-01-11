@@ -65,7 +65,7 @@ const Search: FC<Props> = ({
           <input
             type='search'
             id='search'
-            placeholder='E.g, Luxury room'
+            placeholder='E.g, Standard suite'
             className='w-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white'
             value={searchQuery}
             onChange={handleSearchQueryChange}
