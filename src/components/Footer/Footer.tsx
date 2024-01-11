@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="flex flex-wrap gap-16 justify-between">
                     <div className="flex-1">        
                         <Link href="/" className='mb-4 block font-bold text-tertiary-dark'>
-                            Hotelzz
+                            Naij Hotel
                         </Link>                
                         <p>Get the best hotel rooms you can find. Luxury, Basic, you name it!</p>
                         <div className="flex flex-row items-start py-4">

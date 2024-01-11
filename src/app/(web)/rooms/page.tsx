@@ -68,7 +68,7 @@ const Rooms = () => {
         title={'Search Rooms'}
       />
 
-      <div className='flex mt-20 justify-between flex-wrap'>
+      <div className='flex mt-20 justify-start flex-wrap'>
         {filteredRooms.map(room => (
           <RoomCard key={room._id} room={room} />
         ))}

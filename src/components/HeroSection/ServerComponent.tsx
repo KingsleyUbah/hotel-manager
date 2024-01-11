@@ -2,10 +2,9 @@ import Image from 'next/image';
 
 export const heading1 = (
   <>
-    <h1 className='font-heading mb-6'>Explore Our Exquisite <span className='text-tertiary-light'>Hotel</span></h1>
+    <h1 className='font-heading mb-6'>Home Of Quality Apartments & Hotel <span className='text-tertiary-light'>Service</span></h1>
     <p className='text-[#4a4a4a] dark:text-[#ffffffea] mb-12 max-w-lg'>
-      Experience an Exquisite Hotel Immersed in Rich History and Timeless
-      Elegance.
+      Explore our Exquisite Hotels Rooms Equipped With The Best Facilities You Can Find.      
     </p>
   </>
 );
